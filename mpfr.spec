@@ -1,11 +1,11 @@
 Summary:	Multiple-precision floating-point computations library
 Name:		mpfr
-Version:	3.1.1
-Release:	2
+Version:	3.1.2
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.mpfr.org/mpfr-current/%{name}-%{version}.tar.xz
-# Source0-md5:	91d51c41fcf2799e4ee7a7126fc95c17
+# Source0-md5:	e3d203d188b8fe60bb6578dd3152e05c
 URL:		http://www.mpfr.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
