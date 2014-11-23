@@ -1,7 +1,7 @@
 Summary:	Multiple-precision floating-point computations library
 Name:		mpfr
 Version:	3.1.2
-Release:	3
+Release:	4
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.mpfr.org/mpfr-current/%{name}-%{version}.tar.xz
@@ -29,6 +29,7 @@ floating-point arithmetic (53-bit mantissa).
 Summary:	Header files for MPFR library
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	gmp-devel
 
 %description devel
 Header files for MPFR library.
@@ -58,6 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_infodir}/dir
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/mpfr
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,7 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libmpfr.so
-%{_libdir}/libmpfr.la
 %{_includedir}/mpfr.h
 %{_includedir}/mpf2mpfr.h
 %{_infodir}/mpfr.info*
